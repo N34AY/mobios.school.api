@@ -1,0 +1,23 @@
+_id: getCourseChars
+type: Request
+parentId: fld_wrk_0f2916a715b04bf6af710f690f2815de76a91d6c
+modified: 1603719082772
+created: 1603717441167
+url: "{{ base_url }}/courses/{{ course }}/plans/chars/get"
+name: Получить список характеристик курса по его {id}
+description: Запрос на характеристик курса по его `id`. В запрос нужно
+  передавать `{id}` курса характеристики которого нужно получить. Возвращает
+  массив `chars`.
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1603717441167
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

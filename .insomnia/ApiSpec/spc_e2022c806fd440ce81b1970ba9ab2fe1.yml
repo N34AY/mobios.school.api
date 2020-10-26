@@ -1,7 +1,7 @@
 _id: spc_e2022c806fd440ce81b1970ba9ab2fe1
 type: ApiSpec
 parentId: wrk_0f2916a715b04bf6af710f690f2815de
-modified: 1603716932653
+modified: 1603719083073
 created: 1603370017875
 fileName: mobios school
 contents: >+
@@ -71,7 +71,7 @@ contents: >+
         parameters:
         - name: course
           in: path
-          type: string
+          type: "string"
           required: true
         produces:
         - "application/json"
@@ -101,7 +101,7 @@ contents: >+
         parameters:
           - name: course
             in: path
-            type: string
+            type: "string"
             required: true
         produces:
         - "application/json"
@@ -135,7 +135,7 @@ contents: >+
         parameters:
           - name: id
             in: path
-            type: integer
+            type: "integer"
             required: true
         produces:
         - "application/json"
@@ -165,7 +165,7 @@ contents: >+
         parameters:
           - name: id
             in: path
-            type: integer
+            type: "integer"
             required: true
         produces:
         - "application/json"
@@ -249,7 +249,7 @@ contents: >+
       type: "object"
       properties:
         id:
-          type: integer
+          type: "integer"
         title:
           type: "string"
           example: "Group plan"
@@ -312,7 +312,7 @@ contents: >+
       type: "object"
       properties:
         id:
-          type: integer
+          type: "integer"
         "title":
           type: "sting"
           example: "characteristic"
