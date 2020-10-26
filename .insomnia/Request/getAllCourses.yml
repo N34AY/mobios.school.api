@@ -1,0 +1,22 @@
+_id: getAllCourses
+type: Request
+parentId: fld_wrk_0f2916a715b04bf6af710f690f2815de87222c0a
+modified: 1603445378363
+created: 1603439157204
+url: "{{ base_url }}/courses/get/all"
+name: Получить все курсы
+description: Запрос на получение всех курсов. Возвращает массив всех
+  опубликованных курсов в объекте `courses`.
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1603439157204
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

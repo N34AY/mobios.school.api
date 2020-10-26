@@ -1,0 +1,22 @@
+_id: env_cbcdbc57362b4a7a901766405efa146d
+type: Environment
+parentId: env_7fc21732382e7289c0434ab3cf1ab5488f6d52be
+modified: 1603444746205
+created: 1603444460646
+name: test
+data:
+  base_path: /api
+  scheme: http
+  host: test.mobios.school
+  course: design
+  id: 10
+dataPropertyOrder:
+  "&":
+    - base_path
+    - scheme
+    - host
+    - course
+    - id
+color: "#ffea00"
+isPrivate: false
+metaSortKey: 1603444460646

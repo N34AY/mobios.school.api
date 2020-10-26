@@ -1,0 +1,330 @@
+_id: spc_e2022c806fd440ce81b1970ba9ab2fe1
+type: ApiSpec
+parentId: wrk_0f2916a715b04bf6af710f690f2815de
+modified: 1603716154138
+created: 1603370017875
+fileName: mobios school
+contents: >+
+  swagger: "2.0"
+
+  info:
+    description: "REST API for education portal [http://mobios.school]([http://mobios.school)"
+    version: "1.0.0"
+    title: "Mobios School"
+    contact:
+      name: "Mobios Studio"
+      url: "https://mobios.ua"
+      email: "pm.mobios@gmail.com"
+  host: mobios.school
+
+  basePath: "/api"
+
+  tags:
+
+  - name: "courses"
+    description: "About courses"
+  - name: "plans"
+    description: "About courses plans"
+  schemes:
+
+  - https
+
+  - http
+
+  paths:
+    /courses/get/all:
+      get:
+        tags:
+        - "courses"
+        summary: "Получить все курсы"
+        description: "Запрос на получение всех курсов. Возвращает массив всех опубликованных курсов в объекте `courses`."
+        operationId: "getAllCourses"
+        produces:
+        - "application/json"
+        responses:
+          "200":
+            description: "Успешно, возваращает массив объектов `courses` с опубликованными курсами"
+            schema:
+              type: "object"
+              properties:
+                status:
+                  type: "string"
+                  example: "success"
+                message:
+                  type: "string"
+                  example: "OK"
+                courses:
+                  type: "array"
+                  items:
+                    $ref: "#/definitions/Course"
+          "400":
+            description: "Ошибка, данные не найдены"
+            schema:
+              $ref: "#/definitions/Answer400"
+    /courses/get/{course}:
+      get:
+        tags:
+        - "courses"
+        summary: "Получить курс по его id или slug"
+        description: "Запрос на получение курса. В `{course}` нужно передавать `id` или `slug` курса который хотим получить. Возвращает объект курса `course`."
+        operationId: "getCourse"
+        parameters:
+        - name: course
+          in: path
+          type: string
+          required: true
+        produces:
+        - "application/json"
+        responses:
+          "200":
+            description: "Успешно, возвращает объект курса `course`."
+            schema:
+              properties:
+                status:
+                  type: "string"
+                  example: "success"
+                message:
+                  type: "string"
+                course:
+                  $ref: "#/definitions/Course"
+          "400":
+            description: "Ошибка, данные не найдены."
+            schema:
+              $ref: "#/definitions/Answer400"
+    /courses/{course}/plans/get/all:
+      get:
+        tags:
+        - "plans"
+        summary: "Получить все пакеты курса"
+        description: "Запрос на получение пакетов конкретного курса. В `{course}` нужно передавать `id` или `slug` курса для которого хотим получить пакеты. Возвращает массив `plans` с пакетами этого курса."
+        operationId: "getAllPlans"
+        parameters:
+          - name: course
+            in: path
+            type: string
+            required: true
+        produces:
+        - "application/json"
+        responses:
+          "200":
+            description: "Успешно, возвращается массив объектов `plans` с пакетами данного курса."
+            schema:
+              type: "object"
+              properties:
+                status:
+                  type: "string"
+                  example: "success"
+                message:
+                  type: "string"
+                  example: "OK"
+                plans:
+                  type: "array"
+                  items:
+                    $ref: "#/definitions/Plan"
+          "400":
+            description: "Ошибка, данные не найдены."
+            schema:
+              $ref: "#/definitions/Answer400"
+    /courses/plans/get/{id}:
+      get:
+        tags:
+        - "plans"
+        summary: "Получить пакет по его {id}"
+        description: "Запрос на получение конкретного пакета по его `id`. В запрос нужно передавать `{id}` пакета который нужно получить. Возвращает объект пакета `plan`."
+        operationId: "getPlan"
+        parameters:
+          - name: id
+            in: path
+            type: integer
+            required: true
+        produces:
+        - "application/json"
+        responses:
+          "200":
+            description: "Успешно, возвращает объект пакета `plan`."
+            schema:
+              properties:
+                status:
+                  type: "string"
+                  example: "success"
+                message:
+                  type: "string"
+                plan:
+                  $ref: "#/definitions/Plan"
+          "400":
+            description: "Ошибка, данные не найдены."
+            schema:
+              $ref: "#/definitions/Answer400"
+    /courses/{course}/plans/chars/get:
+      get:
+        tags:
+        - "chars"
+        summary: "Получить список характеристик курса по его {id}"
+        description: "Запрос на характеристик курса по его `id`. В запрос нужно передавать `{id}` курса характеристики которого нужно получить. Возвращает массив `chars`."
+        operationId: "getCourseChars"
+        parameters:
+          - name: id
+            in: path
+            type: integer
+            required: true
+        produces:
+        - "application/json"
+        responses:
+          "200":
+            description: "Успешно, возвращает массив характеристик `chars`."
+            schema:
+              properties:
+                status:
+                  type: "string"
+                  example: "success"
+                message:
+                  type: "string"
+                chars:
+                  type: "array"
+                  items:
+                    $ref: "#/definitions/Char"
+          "400":
+            description: "Ошибка, данные не найдены."
+            schema:
+              $ref: "#/definitions/Answer400"
+  definitions:
+    Course:
+      type: "object"
+      properties:
+        id:
+          type: "integer"
+        slug:
+          type: "string"
+        meta:
+          type: "object"
+          properties:
+            title:
+              type: "string"
+              example: "Graphic"
+            description:
+              type: "string"
+              example: "Graphic course"
+            keywords:
+              type: "string"
+              example: "keys and words"
+          minLength: 0
+        startDate:
+          type: "string"
+          format: "date"
+        promotionDate:
+          type: "string"
+          format: "date"
+        price:
+          type: "object"
+          properties:
+            usd:
+              type: "integer"
+              minimum: 0
+            uah:
+              type: "integer"
+              minimum: 0
+            rub:
+              type: "integer"
+              minimum: 0
+        discount:
+          type: "integer"
+          minimum: 1
+          maximum: 100
+        places:
+          type: "integer"
+          minimum: 1
+        placesLeft:
+          type: "integer"
+          minimum: 0
+        
+        published:
+          type: "boolean"
+          default: false
+        omMainPage:
+          type: "boolean"
+          default: false
+      xml:
+        name: "Course"
+    Plan:
+      type: "object"
+      properties:
+        id:
+          type: integer
+        title:
+          type: "string"
+          example: "Group plan"
+        price:
+          type: "object"
+          properties:
+            usd:
+              type: "integer"
+              minimum: 0
+              example: 200
+            uah:
+              type: "integer"
+              minimum: 0
+              example: 5000
+            rub:
+              type: "integer"
+              minimum: 0
+              example: 10000
+        priceAfterPromotion:
+          type: "object"
+          properties:
+            usd:
+              type: "integer"
+              minimum: 0
+              example: 300
+            uah:
+              type: "integer"
+              minimum: 0
+              example: 7500
+            rub:
+              type: "integer"
+              minimum: 0
+              example: 15000
+        promotionDate:
+          type: "string"
+          format: "date"
+        duration:
+          type: "string"
+          example: "3.5 mounth"
+        sort:
+          type: "integer"
+          example: 1 
+        chars:
+          type: "object"
+          properties:
+            "0":
+              type: "object"
+              $ref: "#/definitions/Char"
+            "1":
+              type: "object"
+              $ref: "#/definitions/Char"
+        description:
+          type: "string"
+          example: "simple plan description"  
+    Answer400:
+      type: "object"
+      properties:
+        status:
+          type: "string"
+          example: "failed"
+        message:
+          type: "string"
+          example: "InvalidArgumentException"
+    Char:
+      type: "object"
+      properties:
+        id:
+          type: integer
+        "title":
+          type: "sting"
+          example: "characteristic"
+        "status":
+          type: "array"
+          items:
+            type: "boolean"
+            example: true
+
+contentType: yaml

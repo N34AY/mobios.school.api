@@ -1,0 +1,23 @@
+_id: getAllPlans
+type: Request
+parentId: fld_wrk_0f2916a715b04bf6af710f690f2815de3a905558
+modified: 1603445378343
+created: 1603439157187
+url: "{{ base_url }}/courses/{{ course }}/plans/get/all"
+name: Получить все пакеты курса
+description: Запрос на получение пакетов конкретного курса. В `{course}` нужно
+  передавать `id` или `slug` курса для которого хотим получить пакеты.
+  Возвращает массив `plans` с пакетами этого курса.
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1603439157187
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

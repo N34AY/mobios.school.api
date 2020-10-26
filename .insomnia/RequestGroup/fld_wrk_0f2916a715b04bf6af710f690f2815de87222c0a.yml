@@ -1,0 +1,10 @@
+_id: fld_wrk_0f2916a715b04bf6af710f690f2815de87222c0a
+type: RequestGroup
+parentId: wrk_0f2916a715b04bf6af710f690f2815de
+modified: 1603445378404
+created: 1603439157223
+name: courses
+description: About courses
+environment: {}
+environmentPropertyOrder: null
+metaSortKey: -1603439157223
