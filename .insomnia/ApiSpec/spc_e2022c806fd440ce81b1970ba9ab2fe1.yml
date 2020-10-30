@@ -1,7 +1,7 @@
 _id: spc_e2022c806fd440ce81b1970ba9ab2fe1
 type: ApiSpec
 parentId: wrk_0f2916a715b04bf6af710f690f2815de
-modified: 1604049029007
+modified: 1604049706218
 created: 1603370017875
 fileName: mobios school
 contents: >+
@@ -316,14 +316,19 @@ contents: >+
         "title":
           type: "sting"
           example: "Доступ к материалам сохранится на 6 месяцев"
+        "statuses":
+          type: "array"
+          items:
+            $ref: "#/definitions/Status"
+    Status:
+      type: "object"
+      properties:
         "content":
-          type: "array"
-          items:
-            example: "+ 8 онлайн вебинаров с преподавателями курса"
-        "status":
-          type: "array"
-          items:
-            type: "boolean"
-            example: true
+          type: "string"
+          example: "+ 8 онлайн вебинаров с преподавателями курса"
+        "active":
+          type: "boolean"
+          example: true
+        
 
 contentType: yaml
