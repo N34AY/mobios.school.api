@@ -1,7 +1,7 @@
 _id: getCourseChars
 type: Request
 parentId: fld_wrk_0f2916a715b04bf6af710f690f2815de76a91d6c
-modified: 1604045825582
+modified: 1604060865747
 created: 1603717441167
 url: "{{ base_url }}/courses/{{ course }}/plans/chars/get"
 name: Получить список характеристик курса по его {id}

@@ -1,0 +1,22 @@
+_id: env_169d21efd5ad4dc28635283c8ffc45ad
+type: Environment
+parentId: env_7fc21732382e7289c0434ab3cf1ab5488f6d52be
+modified: 1604060923353
+created: 1604060880877
+name: office local
+data:
+  base_path: /api/v1
+  scheme: http
+  host: 192.168.1.116
+  course: design
+  id: 10
+dataPropertyOrder:
+  "&":
+    - base_path
+    - scheme
+    - host
+    - course
+    - id
+color: "#3200fa"
+isPrivate: false
+metaSortKey: 1604060880877

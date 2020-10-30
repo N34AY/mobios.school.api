@@ -1,15 +1,13 @@
 _id: env_env_7fc21732382e7289c0434ab3cf1ab5488f6d52be_sub
 type: Environment
 parentId: env_7fc21732382e7289c0434ab3cf1ab5488f6d52be
-modified: 1604046100715
+modified: 1604060865823
 created: 1603370858009
 name: Swagger env
 data:
-  base_path: /api/v1
+  base_path: /api
   scheme: https
   host: mobios.school
-  course: design
-  id: 10
 dataPropertyOrder:
   "&":
     - base_path

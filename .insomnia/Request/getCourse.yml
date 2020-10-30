@@ -1,7 +1,7 @@
 _id: getCourse
 type: Request
 parentId: fld_wrk_0f2916a715b04bf6af710f690f2815de87222c0a
-modified: 1604045825623
+modified: 1604060865776
 created: 1603439157195
 url: "{{ base_url }}/courses/get/{{ course }}"
 name: Получить курс по его id или slug
