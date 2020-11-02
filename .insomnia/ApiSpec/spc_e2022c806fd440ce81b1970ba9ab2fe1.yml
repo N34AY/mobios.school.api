@@ -1,7 +1,7 @@
 _id: spc_e2022c806fd440ce81b1970ba9ab2fe1
 type: ApiSpec
 parentId: wrk_0f2916a715b04bf6af710f690f2815de
-modified: 1604061849526
+modified: 1604312477505
 created: 1603370017875
 fileName: mobios school
 contents: >+
@@ -187,6 +187,66 @@ contents: >+
             description: "Ошибка, данные не найдены."
             schema:
               $ref: "#/definitions/Answer400"
+    /courses/register:
+      post:
+        tags:
+        - "courses"
+        summary: "Записаться на курс"
+        description: "Запрос на запись пользователя на курс. Передается JSON."
+        operationId: "courseRegister"
+        consumes:
+          - application/json
+        parameters:
+          - in: body
+            name: register
+            description: "Запись на курс"
+            schema:
+              type: object
+              required:
+                - courseId
+                - planId
+                - name
+                - email
+                - phone
+              properties:
+                courseId:
+                  type: "integer"
+                  example: 10
+                planId:
+                  type: "integer"
+                  example: 5
+                name:
+                  type: "string"
+                  example: "Ivan Ivanov"
+                email:
+                  type: "string"
+                  example: "ivan@gmail.com"
+                phone:
+                  type: "string"
+                  example: "+380995639404"
+        produces:
+        - "application/json"
+        responses:
+          "200":
+            description: "Успешно, возвращает сообщение `message`"
+            schema:
+              properties:
+                status:
+                  type: "string"
+                  example: "success"
+                message:
+                  type: "string"
+                  example: "Вы успешно записались на курс!"
+          "400":
+            description: "Ошибка, данные не валидны, не получилось записаться на курс"
+            schema:
+              properties:
+                status:
+                  type: "string"
+                  example: "failed"
+                message:
+                  type: "string"
+                  example: "Поле email не заполнено!"
   definitions:
     Course:
       type: "object"

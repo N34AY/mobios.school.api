@@ -1,9 +1,9 @@
 _id: getAllPlans
 type: Request
 parentId: fld_wrk_0f2916a715b04bf6af710f690f2815de3a905558
-modified: 1604061849323
+modified: 1604309628414
 created: 1603439157187
-url: "{{ base_url }}/courses/{{ course }}/plans/get/all"
+url: "{{ base_url }}/courses/grapic-design-2020/plans/get/all"
 name: Получить все пакеты курса
 description: Запрос на получение пакетов конкретного курса. В `{course}` нужно
   передавать `id` или `slug` курса для которого хотим получить пакеты.
