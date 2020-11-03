@@ -1,7 +1,7 @@
 _id: getPlan
 type: Request
 parentId: fld_wrk_0f2916a715b04bf6af710f690f2815de3a905558
-modified: 1604417297827
+modified: 1604417418037
 created: 1603439157179
 url: "{{ base_url }}/courses/plans/get/{{ id }}"
 name: Получить пакет по его {id}

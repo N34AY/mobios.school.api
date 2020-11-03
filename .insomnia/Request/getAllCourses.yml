@@ -1,7 +1,7 @@
 _id: getAllCourses
 type: Request
 parentId: fld_wrk_0f2916a715b04bf6af710f690f2815de87222c0a
-modified: 1604417297853
+modified: 1604417418066
 created: 1603439157204
 url: "{{ base_url }}/courses/get/all"
 name: Получить все курсы
