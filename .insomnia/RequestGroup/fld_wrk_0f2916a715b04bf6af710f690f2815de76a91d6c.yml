@@ -1,10 +1,10 @@
 _id: fld_wrk_0f2916a715b04bf6af710f690f2815de76a91d6c
 type: RequestGroup
 parentId: wrk_0f2916a715b04bf6af710f690f2815de
-modified: 1604309523641
+modified: 1604415831087
 created: 1603717441212
 name: chars
-description: ""
+description: About plans characteristics
 environment: {}
 environmentPropertyOrder: null
 metaSortKey: -1603717441212

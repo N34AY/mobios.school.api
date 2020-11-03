@@ -1,0 +1,33 @@
+_id: courseRegister
+type: Request
+parentId: fld_wrk_0f2916a715b04bf6af710f690f2815de87222c0a
+modified: 1604415831028
+created: 1604415827260
+url: "{{ base_url }}/courses/register"
+name: Записаться на курс
+description: Запрос на запись пользователя на курс. Передается JSON.
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+      "courseId": 10,
+      "planId": 5,
+      "name": "Ivan Ivanov",
+      "email": "ivan@gmail.com",
+      "phone": "+380995639404"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    disabled: false
+    value: application/json
+authentication: {}
+metaSortKey: -1604415827260
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

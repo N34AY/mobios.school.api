@@ -1,0 +1,29 @@
+_id: getUser
+type: Request
+parentId: fld_wrk_0f2916a715b04bf6af710f690f2815de66a36e77
+modified: 1604415831002
+created: 1604415827251
+url: "{{ base_url }}/auth/user"
+name: Записаться на курс
+description: Запрос на получение объекта пользователя.
+method: POST
+body:
+  mimeType: application/json
+  text: >-
+    {
+      "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9uYXN2aXRsby5tb2Jpb3Mud29ya1wvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTYwNDQxMTUwMCwiZXhwIjoxNjA1NjIxMTAwLCJuYmYiOjE2MDQ0MTE1MDAsImp0aSI6IjVWRk5PRjBRb1RCdTBMeFoiLCJzdWIiOjExNCwicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.vOyagfgYAZULzzqEOi8_bcMq-Lp8oZd01dq9fSIiNcM"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    disabled: false
+    value: application/json
+authentication: {}
+metaSortKey: -1604415827251
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
