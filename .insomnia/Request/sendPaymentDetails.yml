@@ -1,0 +1,33 @@
+_id: sendPaymentDetails
+type: Request
+parentId: fld_wrk_0f2916a715b04bf6af710f690f2815de87222c0a
+modified: 1604417297789
+created: 1604417297789
+url: "{{ base_url }}/courses/payment/details/send"
+name: Отправить реквизиты на почту
+description: Запрос на отправку реквизитов для оплаты. Передается ключ `email`
+  по которому отсылается письмо на почту пользователя. А так же `courseId` и
+  `planId` для идентификации курса и пакета который нужно оплатить.
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+      "userEmail": "email@gmail.com",
+      "courseId": 12,
+      "planId": 4
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    disabled: false
+    value: application/json
+authentication: {}
+metaSortKey: -1604417297789
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

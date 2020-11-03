@@ -1,12 +1,12 @@
 _id: getUser
 type: Request
 parentId: fld_wrk_0f2916a715b04bf6af710f690f2815de66a36e77
-modified: 1604415831002
+modified: 1604417297800
 created: 1604415827251
 url: "{{ base_url }}/auth/user"
 name: Записаться на курс
 description: Запрос на получение объекта пользователя.
-method: POST
+method: GET
 body:
   mimeType: application/json
   text: >-

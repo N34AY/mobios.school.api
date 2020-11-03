@@ -1,7 +1,7 @@
 _id: spc_e2022c806fd440ce81b1970ba9ab2fe1
 type: ApiSpec
 parentId: wrk_0f2916a715b04bf6af710f690f2815de
-modified: 1604415831448
+modified: 1604417298045
 created: 1603370017875
 fileName: mobios school
 contents: >-
@@ -27,6 +27,8 @@ contents: >-
     description: "About courses plans"
   - name: "chars"
     description: "About plans characteristics"
+  - name: "auth"
+    description: "About users authentication"
   schemes:
 
   - https
@@ -253,7 +255,7 @@ contents: >-
                   type: "string"
                   example: "Поле email не заполнено!"
     /auth/user:
-      post:
+      get:
         tags:
         - "auth"
         summary: "Записаться на курс"
@@ -299,6 +301,56 @@ contents: >-
                 message:
                   type: "string"
                   example: "Пользователь не найден!"
+    /courses/payment/details/send:
+      post:
+        tags:
+        - "courses"
+        summary: "Отправить реквизиты на почту"
+        description: "Запрос на отправку реквизитов для оплаты. Передается ключ `email` по которому отсылается письмо на почту пользователя. А так же `courseId` и `planId` для идентификации курса и пакета который нужно оплатить."
+        operationId: "sendPaymentDetails"
+        consumes:
+          - application/json
+        parameters:
+          - in: body
+            name: details
+            description: "JSON с информацией о курсе, выбранном пакете и почтой пользователя"
+            schema:
+              type: object
+              required:
+                - token
+              properties:
+                userEmail:
+                  type: "string"
+                  example: "email@gmail.com"
+                courseId:
+                  type: "integer"
+                  example: 12
+                planId:
+                  type: "integer"
+                  example: 4
+        produces:
+        - "application/json"
+        responses:
+          "200":
+            description: "Успешно, реквизиты отправлены"
+            schema:
+              properties:
+                status:
+                  type: "string"
+                  example: "success"
+                message:
+                  type: "string"
+                  example: "Реквизиты отправлены!"
+          "400":
+            description: "Ошибка, реквизиты не отправлены"
+            schema:
+              properties:
+                status:
+                  type: "string"
+                  example: "failed"
+                message:
+                  type: "string"
+                  example: "Ошибка"
   definitions:
     Course:
       type: "object"
