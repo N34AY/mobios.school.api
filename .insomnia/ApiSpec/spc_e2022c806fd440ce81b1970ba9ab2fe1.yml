@@ -1,10 +1,10 @@
 _id: spc_e2022c806fd440ce81b1970ba9ab2fe1
 type: ApiSpec
 parentId: wrk_0f2916a715b04bf6af710f690f2815de
-modified: 1604312477505
+modified: 1604415231416
 created: 1603370017875
 fileName: mobios school
-contents: >+
+contents: >-
   swagger: "2.0"
 
   info:
@@ -25,6 +25,8 @@ contents: >+
     description: "About courses"
   - name: "plans"
     description: "About courses plans"
+  - name: "chars"
+    description: "About plans characteristics"
   schemes:
 
   - https
@@ -237,6 +239,9 @@ contents: >+
                 message:
                   type: "string"
                   example: "Вы успешно записались на курс!"
+                payment:
+                  type: "object"
+                  $ref: "#/definitions/Payment"
           "400":
             description: "Ошибка, данные не валидны, не получилось записаться на курс"
             schema:
@@ -247,6 +252,53 @@ contents: >+
                 message:
                   type: "string"
                   example: "Поле email не заполнено!"
+    /auth/user:
+      post:
+        tags:
+        - "auth"
+        summary: "Записаться на курс"
+        description: "Запрос на получение объекта пользователя."
+        operationId: "getUser"
+        consumes:
+          - application/json
+        parameters:
+          - in: body
+            name: auth
+            description: "Запись на курс"
+            schema:
+              type: object
+              required:
+                - token
+              properties:
+                token:
+                  type: "string"
+                  example: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9uYXN2aXRsby5tb2Jpb3Mud29ya1wvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTYwNDQxMTUwMCwiZXhwIjoxNjA1NjIxMTAwLCJuYmYiOjE2MDQ0MTE1MDAsImp0aSI6IjVWRk5PRjBRb1RCdTBMeFoiLCJzdWIiOjExNCwicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.vOyagfgYAZULzzqEOi8_bcMq-Lp8oZd01dq9fSIiNcM"
+        produces:
+        - "application/json"
+        responses:
+          "200":
+            description: "Успешно, возвращает объект `user`"
+            schema:
+              properties:
+                status:
+                  type: "string"
+                  example: "success"
+                message:
+                  type: "string"
+                  example: "Пользователь найден!"
+                user:
+                  type: "object"
+                  $ref: "#/definitions/User"
+          "400":
+            description: "Ошибка, пользователь не найден"
+            schema:
+              properties:
+                status:
+                  type: "string"
+                  example: "failed"
+                message:
+                  type: "string"
+                  example: "Пользователь не найден!"
   definitions:
     Course:
       type: "object"
@@ -389,6 +441,145 @@ contents: >+
         "active":
           type: "boolean"
           example: true
-        
-
+    Payment:
+      type: "object"
+      properties:
+        "uah":
+          type: "object"
+          properties:
+            merchantAccount:
+              type: "string"
+              example: "mobios_school"
+            merchantDomainName:
+              type: "string"
+              example: "https://mobios.school"
+            merchantSignature:
+              type: "string"
+              example: "bc52ad1874b32bab17bdff56a5f19924"
+            returnUrl:
+              type: "string"
+              example: "https://mobios.school/api/payment/wayforpay/getres"
+            serviceUrl:
+              type: "string"
+              example: "https://mobios.school/api/payment/wayforpay/getres"
+            orderReference: 
+              type: "string"
+              example: "31b6f30f1cd9e93a1583c13b753c039364e98dd4"
+            orderDate:
+              type: "string"
+              example: "1604411928"
+            orderNo: 
+              type: "string"
+              example: "4083"
+            amount:
+              type: "string"
+              example: "9800"
+            currency:
+              type: "string"
+              example: "UAH"
+            productName[]:
+              type: "string"
+              example: "Оплата курса"
+            productPrice[]:
+              type: "string"
+              example: "9800"
+            productCount[]:
+              type: "string"
+              example: "1"
+        "rub":
+          type: "object"
+          properties:
+            merchantAccount:
+              type: "string"
+              example: "mobios_school"
+            merchantDomainName:
+              type: "string"
+              example: "https://mobios.school"
+            merchantSignature:
+              type: "string"
+              example: "308263c2e7720f169d5b7c82afbceb34"
+            returnUrl:
+              type: "string"
+              example: "https://mobios.school/api/payment/wayforpay/getres"
+            serviceUrl:
+              type: "string"
+              example: "https://mobios.school/api/payment/wayforpay/getres"
+            orderReference: 
+              type: "string"
+              example: "4fd11b8d2d0556f9120966728bca106a9beab239"
+            orderDate:
+              type: "string"
+              example: "1604411928"
+            orderNo: 
+              type: "string"
+              example: "4083"
+            amount:
+              type: "string"
+              example: "28210"
+            currency:
+              type: "string"
+              example: "RUB"
+            productName[]:
+              type: "string"
+              example: "Оплата курса"
+            productPrice[]:
+              type: "string"
+              example: "28210"
+            productCount[]:
+              type: "string"
+              example: "1"
+        "usd":
+          type: "object"
+          properties:
+            merchantAccount:
+              type: "string"
+              example: "mobios_school"
+            merchantDomainName:
+              type: "string"
+              example: "https://mobios.school"
+            merchantSignature:
+              type: "string"
+              example: "2e89ba0d7bef9f42bb8e0b81560d5507"
+            returnUrl:
+              type: "string"
+              example: "https://mobios.school/api/payment/wayforpay/getres"
+            serviceUrl:
+              type: "string"
+              example: "https://mobios.school/api/payment/wayforpay/getres"
+            orderReference: 
+              type: "string"
+              example: "4fd11b8d2d0556f9120966728bca106a9beab239"
+            orderDate:
+              type: "string"
+              example: "1604411928"
+            orderNo: 
+              type: "string"
+              example: "4083"
+            amount:
+              type: "string"
+              example: "114"
+            currency:
+              type: "string"
+              example: "USD"
+            productName[]:
+              type: "string"
+              example: "Оплата курса"
+            productPrice[]:
+              type: "string"
+              example: "114"
+            productCount[]:
+              type: "string"
+              example: "1"
+    User:
+      type: "object"
+      properties:
+        "name":
+          type: "string"
+          example: "Иван Иванович"
+        "email":
+          type: "string"
+          example: "email@gmail.com"
+        "phone":
+          type: "string"
+          example: "+380685331856"
 contentType: yaml
