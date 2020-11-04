@@ -1,7 +1,7 @@
 _id: sendPaymentDetails
 type: Request
 parentId: fld_wrk_0f2916a715b04bf6af710f690f2815de87222c0a
-modified: 1604497605300
+modified: 1604504756503
 created: 1604417297789
 url: "{{ base_url }}/courses/payment/details/send"
 name: Отправить реквизиты на почту

@@ -1,9 +1,9 @@
 _id: getCourse
 type: Request
 parentId: fld_wrk_0f2916a715b04bf6af710f690f2815de87222c0a
-modified: 1604497605452
+modified: 1604504979625
 created: 1603439157195
-url: "{{ base_url }}/courses/get/{{ course }}"
+url: "{{ base_url }}/courses/get/74"
 name: Получить курс по его id или slug
 description: Запрос на получение курса. В `{course}` нужно передавать `id` или
   `slug` курса который хотим получить. Возвращает объект курса `course`.

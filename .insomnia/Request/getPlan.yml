@@ -1,9 +1,9 @@
 _id: getPlan
 type: Request
 parentId: fld_wrk_0f2916a715b04bf6af710f690f2815de3a905558
-modified: 1604497605434
+modified: 1604504767951
 created: 1603439157179
-url: "{{ base_url }}/courses/plans/get/{{ id }}"
+url: "{{ base_url }}/courses/plans/get/37"
 name: Получить пакет по его {id}
 description: Запрос на получение конкретного пакета по его `id`. В запрос нужно
   передавать `{id}` пакета который нужно получить. Возвращает объект пакета
