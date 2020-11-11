@@ -1,13 +1,13 @@
-_id: env_169d21efd5ad4dc28635283c8ffc45ad
+_id: env_ffe2bc4291404f16ba2eaff89c5f6dc4
 type: Environment
 parentId: env_7fc21732382e7289c0434ab3cf1ab5488f6d52be
-modified: 1605102987112
-created: 1604060880877
-name: office
+modified: 1605103019349
+created: 1605102989358
+name: api-server
 data:
   base_path: /api/v1
   scheme: http
-  host: 192.168.0.140:8080
+  host: api.mobios.school
   course: design
   id: 10
 dataPropertyOrder:
@@ -17,6 +17,6 @@ dataPropertyOrder:
     - host
     - course
     - id
-color: "#3200fa"
+color: "#f0008c"
 isPrivate: false
-metaSortKey: 1604060880877
+metaSortKey: 1605102989358

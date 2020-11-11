@@ -1,7 +1,7 @@
 _id: getUser
 type: Request
 parentId: fld_wrk_0f2916a715b04bf6af710f690f2815de66a36e77
-modified: 1604504756513
+modified: 1605101796001
 created: 1604415827251
 url: "{{ base_url }}/auth/user"
 name: Получить данные пользователя
